@@ -9,7 +9,8 @@
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -42,7 +43,8 @@
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {
@@ -52,6 +54,7 @@
 
 body {
   margin: 0;
+  background: var(--bg);
 }
 
 #root {
@@ -77,20 +80,24 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -108,4 +115,115 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+
+/* ========================================
+   Tic Tac Toe(三目並べ)
+   ======================================== */
+
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+
+  width: 480px;
+  max-width: calc(100% - 40px);
+
+  margin: 20px auto;
+  padding: 20px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  box-shadow: var(--shadow);
+
+  text-align: left;
+}
+
+
+/* ゲーム盤 */
+
+.game-board {
+  flex-shrink: 0;
+}
+
+
+/* Next player / Winner */
+
+.status {
+  margin-bottom: 12px;
+  color: var(--text-h);
+}
+
+
+/* 盤面の1行 */
+
+.board-row {
+  display: flex;
+}
+
+
+/* マス */
+
+.square {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  background: var(--bg);
+  border: 1px solid #999;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+
+/* マウスを乗せたとき */
+
+.square:hover {
+  background: var(--accent-bg);
+}
+
+
+/* 履歴 */
+
+.game-info {
+  padding-top: 35px;
+}
+
+.game-info ol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.game-info li {
+  margin-bottom: 3px;
+  padding-left: 3px;
+}
+
+
+/* 履歴ボタン */
+
+.game-info button {
+  padding: 4px 8px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  color: var(--text-h);
+
+  cursor: pointer;
+}
+
+.game-info button:hover {
+  background: var(--accent-bg);
 }
