@@ -1,3 +1,4 @@
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -226,4 +227,107 @@ code {
 
 .game-info button:hover {
   background: var(--accent-bg);
+}
+
+
+/* ========================================
+   React の流儀（商品表）
+   ======================================== */
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 4px 10px;
+}
+
+.product-page {
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ccecf0;;
+}
+
+.product-search {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+  transform: translateX(-90px);
+}
+
+.product-search label {
+  display: block;
+  margin-top: 8px;
+}
+
+
+/* ========================================
+   Get Inspired App（ひらめきを得るアプリ）
+   ======================================== */
+
+/* ランダムカラーの表示 */
+
+.colorbox {
+  width: 280px;
+  max-width: calc(100% - 40px);
+  height: 160px;
+  margin: 24px auto 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+
+/* ひらめきアプリのボタン */
+
+.inspire-button {
+  width: auto;
+  display: block;
+  padding: 10px 24px;
+  margin: 20px auto;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+
+/* マウスを乗せたとき */
+
+.inspire-button:hover {
+  background: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+
+/* ボタンを押したとき */
+
+.inspire-button:active {
+  transform: translateY(0);
+}
+
+/* 名言の説明文 */
+.inspiration-quote > p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* 名言本文（FancyTextのh3） */
+.inspiration-quote h3.fancy {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
